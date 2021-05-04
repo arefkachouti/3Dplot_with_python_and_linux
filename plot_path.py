@@ -15,9 +15,7 @@ parser.add_argument("-d", "--data",type=str,metavar='', required=True, help="dat
 parser.add_argument("-t","--title",type=str,metavar='', required=True, help='title of the graph')
 parser.add_argument("-c","--color",type=str,metavar='', required=True, help='color with this form -Color')
 args=parser.parse_args()
-#parser = argparse.ArgumentParser()
-#parser.add_argument("-d","data",type=str)
-#args = parser.parse_args()
+
 
 class Pose3D:
 
@@ -71,26 +69,17 @@ def load_data(fname):
     return nodes
 
 def main():
-    print("start!!")
-#file1 = open('data1.txt', "r")
-#file2 = open('data2.txt', "r")
+    print("start")
 file = open(args.data, "r")
-#fnames = [file1,file2]
-#fnames = file.readlines()
-#print(fnames)
-#for f in fnames:
-#print(f)
 nodes= load_data(file.readlines())
-        # plot
 est_traj_fig = plt.figure(args.title)
 ax = est_traj_fig.add_subplot(111, projection='3d')
 plot_nodes(nodes, ax, color=args.color, label="data")
 plt.legend()
-#plt.titre("aref")
 plt.pause(0.05)
 plt.show()
 
-print("done!!")
+print("done")
 
 
 if __name__ == '__main__':
