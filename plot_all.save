@@ -1,0 +1,8 @@
+
+#!/usr/bin/env bash
+DATA_SOURCE_1=${1?Error: no data given}
+DATA_SOURCE_2=${2?Error: no data given}
+
+$ python plot_path.py -d $DATA_SOURCE_1 -t "data" -c "r"
+$ python plot_path.py -d $DATA_SOURCE_2 -t "data" -c "r"
+
